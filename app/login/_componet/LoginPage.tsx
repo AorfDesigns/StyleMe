@@ -25,7 +25,7 @@ const LoginPage: React.FC = () => {
   return (
     <div className="w-screen h-screen bg-transparent flex items-center justify-center">
       <div className="w-full max-w-sm sm:max-w-md bg-gray-400/20 p-6 sm:p-8 shadow-md rounded-lg">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center text-black">Measure_</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-black">Style_Me</h2>
         <p className="text-center text-gray-400 text-xs sm:text-base mt-2">
           Welcome Back Creative Mind.
         </p>

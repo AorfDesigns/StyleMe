@@ -5,6 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FaChartLine, FaRuler, FaSignOutAlt } from "react-icons/fa"; // Importing icons for Trends, Measurement, and Log out
 import Image from 'next/image';
 import Link from 'next/link';
+import SearchBar from './SearchBar';
 
 const Header: React.FC = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -21,10 +22,10 @@ const Header: React.FC = () => {
       <div className="container flex items-center justify-between lg:justify-start">
         {/* Name with Dropdown Arrow */}
         <div
-          className="relative flex items-center text-lg font-bold text-black hover:bg-gray-200 p-4 rounded-md lg:ml-8 mx-auto lg:mr-auto lg:justify-start justify-center cursor-pointer"
+          className="relative flex items-center text-lg font-bold text-black hover:bg-gray-200 hover:text-gray-400 p-4 rounded-md lg:ml-8 mx-auto lg:mr-auto lg:justify-start justify-center cursor-pointer"
           onClick={toggleDropdown}
         >
-          Measure
+          Style_Me
           <IoIosArrowDown className="w-5 h-5 ml-2" aria-hidden="true" />
 
           {/* Dropdown Menu */}
@@ -63,11 +64,32 @@ const Header: React.FC = () => {
                     <p className="text-xs font-normal mt-2">Overview of Clients Data</p>
                   </div>
                 </div>
-            
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 bg-white rounded-full p-2">
+                    <FaRuler className="text-gray-500 w-5 h-5" />
+                  </div>
+                  <div className="ml-4">
+                    <Link href="/clientinformation" className="font-bold">Client Management</Link>
+                    <p className="text-xs font-normal mt-2">Client Details Information</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 bg-white rounded-full p-2">
+                    <FaRuler className="text-gray-500 w-5 h-5" />
+                  </div>
+                  <div className="ml-4">
+                    <Link href="/clientlist" className="font-bold">Client List</Link>
+                    <p className="text-xs font-normal mt-2">Client Details Information</p>
+                  </div>
+                </div>
               </ul>
             </div>
           )}
         </div>
+       
+       <div className='lg:flex lg:items-center lg:mx-auto md:none;'>
+        <SearchBar />
+       </div>
 
         {/* Profile Image */}
         <div
