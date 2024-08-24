@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import React, { useState } from 'react';
 import { useMeasurementContext } from './MeasurementsContext';
 
@@ -69,8 +70,8 @@ const Measurements: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-gray-100 p-6 text-black">
-      <div className="max-w-4xl mx-auto w-auto bg-gray-400/20 shadow-md rounded-lg p-6">
+    <div className="flex flex-col items-center justify-center h-screen w-screen bg-white">
+      <div className="flex flex-col max-w-md w-full lg:bg-gray-700/10 bg-white  rounded-lg p-6">
         <h1 className="text-2xl font-bold mb-6">Take New Measurements</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -149,7 +150,7 @@ const Measurements: React.FC = () => {
             <button
               type="button"
               onClick={handleAddMeasurement}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Add Another Measurement
             </button>
@@ -158,7 +159,7 @@ const Measurements: React.FC = () => {
           <div className="flex items-center justify-between">
             <button
               type="submit"
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-black hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Save Measurements
             </button>

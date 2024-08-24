@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -16,21 +17,19 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center bg-gray-100 p-2 rounded-md">
+    <div className="flex items-center space-x-2">
       <input
         type="text"
         value={query}
         onChange={handleInputChange}
         placeholder="Search..."
-        className="flex-grow px-4 py-2 bg-white border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        className="flex-grow px-4 py-2 border-b-2 border-gray-300 focus:border-black focus:outline-none"
       />
       <button
         onClick={handleSearch}
-        className="px-4 py-2 bg-black text-white rounded-r-md hover:bg-gray-600 transition"
+        className="flex items-center px-4 py-2 border-b-2 border-transparent text-gray-600 hover:border-black hover:text-black transition"
       >
         <FontAwesomeIcon icon={faSearch} />
-
-       
       </button>
     </div>
   );
