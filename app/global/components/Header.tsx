@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
-import { FaChartLine, FaRuler, FaSignOutAlt, FaTimes } from 'react-icons/fa'; // Importing icons for Trends, Measurement, Log out, and Close
+import { FaChartLine, FaRuler, FaSignOutAlt, FaTimes } from 'react-icons/fa'; // Importing icons including the close icon
+import { MdMessage } from 'react-icons/md'; // Importing message icon
 import Image from 'next/image';
 import Link from 'next/link';
 import SearchBar from './SearchBar';
@@ -18,7 +19,7 @@ const Header: React.FC = () => {
   const toggleDropdownProfile = () => {
     setDropdownOpenProfile(!isDropdownOpenProfile);
   };
-
+  const messageCount = 1;
   return (
     <header className="bg-transparent shadow-md p-4">
       <div className="container flex items-center justify-between lg:justify-start relative">
@@ -95,6 +96,17 @@ const Header: React.FC = () => {
                     <p className="text-xs font-normal mt-2">Client Details Information</p>
                   </div>
                 </li>
+                
+                {/* Fabric Library with Icon */}
+                <li className="flex items-center">
+                  <div className="flex-shrink-0 bg-white rounded-full p-2">
+                    <FaRuler className="text-gray-500 w-5 h-5" />
+                  </div>
+                  <div className="ml-4">
+                    <Link href="/fabriclibrary" className="font-bold">Fabric Store</Link>
+                    <p className="text-xs font-normal mt-2">Get fantastic fabrics and materials inspiration</p>
+                  </div>
+                </li>
               </ul>
             </div>
           )}
@@ -103,12 +115,10 @@ const Header: React.FC = () => {
         <div className='flex items-center mx-auto'>
           <SearchBar />
         </div>
-
-        {/* Profile Image */}
-        <div
-          className="relative flex items-center cursor-pointer"
-          onClick={toggleDropdownProfile}
-        >
+       
+        {/* Profile Image and Message Icon */}
+        <div className="relative flex items-center ml-4">
+          <span className='absolute bottom-0 left-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full'></span>
           <Image
             src="/dev-images/AvatarModal.png"
             alt="Profile Picture"
@@ -116,6 +126,14 @@ const Header: React.FC = () => {
             height={40}
             className="rounded-full"
           />
+          <Link href="/messages" className="relative ml-4">
+            <MdMessage className="text-gray-500 w-6 h-6" />
+            {messageCount > 0 && (
+              <span className="absolute top-4 left-2 right-0 w-5 h-5 bg-red-600 text-white text-xs font-bold flex items-center justify-center rounded-full">
+                {messageCount}
+              </span>
+            )}
+          </Link>
         </div>
 
         {isDropdownOpenProfile && (

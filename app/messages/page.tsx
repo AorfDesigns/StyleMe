@@ -1,12 +1,14 @@
 import React from 'react'
 import AppLayout from '../Applayout'
-import FashionTrends from './_components/FashionGrids'
+import MessageComponent from './_components/Messages'
 
 const page = () => {
   return (
-    <AppLayout>
-        <FashionTrends/>
+    <div>
+        <AppLayout>
+            <MessageComponent />
         </AppLayout>
+    </div>
   )
 }
 
