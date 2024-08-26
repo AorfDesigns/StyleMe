@@ -124,7 +124,8 @@ const Header: React.FC = () => {
             alt="Profile Picture"
             width={40}
             height={40}
-            className="rounded-full"
+            className="rounded-full cursor-pointer"
+            onClick={toggleDropdownProfile} 
           />
           <Link href="/messages" className="relative ml-4">
             <MdMessage className="text-gray-500 w-6 h-6" />
