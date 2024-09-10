@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { FaPlus, FaTrash } from 'react-icons/fa';
 
 type FashionTrend = {
@@ -92,9 +93,11 @@ const FashionTrends: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {moodboard.map((item, index) => (
                 <div key={index} className="relative flex flex-col items-center">
-                  <img
+                  <Image
                     src={item.imageSrc}
                     alt={`${item.category} - ${item.year}`}
+                    width={400} // Adjust width as needed
+                    height={240} // Adjust height as needed
                     className="w-full h-60 object-cover rounded-lg shadow-md"
                   />
                   <button 
@@ -116,9 +119,11 @@ const FashionTrends: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
           {filteredTrends.map((trend, index) => (
             <div key={index} className="relative flex flex-col items-center group">
-              <img
+              <Image
                 src={trend.imageSrc}
                 alt={`${trend.category} - ${trend.year}`}
+                width={400} // Adjust width as needed
+                height={240} // Adjust height as needed
                 className="w-full h-60 object-cover rounded-lg shadow-md cursor-pointer"
               />
               <button 

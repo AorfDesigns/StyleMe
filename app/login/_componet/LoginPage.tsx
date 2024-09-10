@@ -1,4 +1,3 @@
-// pages/login.tsx
 'use client';
 import React, { useState } from 'react';
 
@@ -70,7 +69,7 @@ const LoginPage: React.FC = () => {
           </div>
         </form>
         <div className="text-center text-gray-600 text-sm sm:text-base mt-6">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <a href="/signup" className="text-blue-600 hover:underline">
             Sign up
           </a>

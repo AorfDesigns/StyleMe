@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
+import Image from 'next/image';
 import { PaperAirplaneIcon, TrashIcon } from '@heroicons/react/24/solid';
 
 type Message = {
@@ -69,20 +70,20 @@ const MessageComponent: React.FC = () => {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="p-4 bg-white shadow-md rounded-lg w-full max-w-md">
         <div className="flex items-center justify-between mb-4">
-        <div className='relative flex items-center'>
-  <img 
-    src="/dev-images/fashion1.png" 
-    width={40} 
-    height={40} 
-    alt="Fashion" 
-    className="rounded-full object-cover" 
-  />
-  <span className='absolute bottom-0 left-6 w-4 h-4 bg-green-500 border-2 border-white rounded-full'></span>
-  <div className='flex flex-col ml-3'>
-    <h4 className="text-xl font-bold">Designer A</h4>
-    <p className='text-gray-500 text-sm'>Online</p>
-  </div>
-</div>
+          <div className='relative flex items-center'>
+            <Image 
+              src="/dev-images/fashion1.png" 
+              alt="Fashion" 
+              width={40} 
+              height={40} 
+              className="rounded-full object-cover" 
+            />
+            <span className='absolute bottom-0 left-6 w-4 h-4 bg-green-500 border-2 border-white rounded-full'></span>
+            <div className='flex flex-col ml-3'>
+              <h4 className="text-xl font-bold">Designer A</h4>
+              <p className='text-gray-500 text-sm'>Online</p>
+            </div>
+          </div>
 
           <button
             onClick={handleClearChat}
@@ -96,10 +97,12 @@ const MessageComponent: React.FC = () => {
           {messages.map(message => (
             <div key={message.id} className="flex items-start mb-4">
               <div className="relative">
-                <img
+                <Image
                   src={message.senderImage}
                   alt={`${message.sender}'s profile`}
-                  className="w-8 h-8 rounded-full mr-3"
+                  width={32} // Equivalent to w-8 in TailwindCSS
+                  height={32} // Equivalent to h-8 in TailwindCSS
+                  className="rounded-full mr-3"
                 />
                 <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
               </div>
@@ -122,9 +125,9 @@ const MessageComponent: React.FC = () => {
           />
           <button
             onClick={handleIconClick}
-            className="p-2  text-black rounded-r-lg flex items-center justify-center relative overflow-hidden"
+            className="p-2 text-black rounded-r-lg flex items-center justify-center relative overflow-hidden"
           >
-             <PaperAirplaneIcon
+            <PaperAirplaneIcon
               className={`h-5 w-5 transform transition-transform duration-200 paper-airplane-icon ${isAnimating ? 'animate-send' : ''}`}
             />
           </button>
@@ -132,10 +135,12 @@ const MessageComponent: React.FC = () => {
         <div className="flex items-center space-x-2 overflow-x-auto pb-2">
           {onlineDesigners.map((designer, index) => (
             <div key={index} className="relative flex-shrink-0">
-              <img
+              <Image
                 src={designer.image}
                 alt={designer.name}
-                className="w-12 h-12 rounded-full border-2 border-gray-300"
+                width={48}  // Equivalent to w-12 in TailwindCSS
+                height={48} // Equivalent to h-12 in TailwindCSS
+                className="rounded-full border-2 border-gray-300"
               />
               <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
             </div>
