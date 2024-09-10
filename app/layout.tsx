@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { MeasurementProvider } from "./measure/_components/MeasurementsContext";
+
 
 const montserrat_init = Montserrat({ 
   subsets: ["latin"],
@@ -22,9 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat_init.variable}>
-        <MeasurementProvider>
-          {children}
-        </MeasurementProvider>
+
       </body>
     </html>
   );
